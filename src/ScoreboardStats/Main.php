@@ -24,9 +24,7 @@ class Main extends PluginBase implements Listener {
  			$Money = $this->EconomyS->mymoney($Name);
  			$Online = count(Server::getInstance()->getOnlinePlayers());
  			$Full = $this->getServer()->getMaxPlayers();
-            $TPS = $this->getServer()->getTicksPerSecond();
-            $Load = $this->getServer()->getTickUsageAverage();
- 			$players->sendPopup(" §eID:§b $Name  §aCoin:§f $Money §2$ §cOnline:§a $Online §e/§a $Full \n               §eTps §a:§b $TPS  §dLoad §a: §b $Load §e%");
+ 			$players->sendPopup(" §eID:§b $Name  §aCoin:§f $Money §2$ §cOnline:§a $Online §e/§a $Full
  		}
  	}
 
