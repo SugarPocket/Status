@@ -29,7 +29,7 @@ class Main extends PluginBase implements Listener {
  			//$TPS = $this->getServer()->getTicksPerSecond(); 
  			//$Load = $this->getServer()->getTickUsageAverage();
  			//$Time = intval($this->cfg["time"]) * 20;
- 			$players->sendPopup(" §eID:§b $Name  §aCoin:§f $Money §2$ §cOnline:§a $Online §e/§a $Full \n §eTps §a:§b $TPS §dLoad §a: §b $Load §e% §aTime §e: §6 $Time");
+ 			$players->sendPopup(" §eID:§b $Name  §aCoin:§f $Money §2$ ");
  		}
  	}
 
