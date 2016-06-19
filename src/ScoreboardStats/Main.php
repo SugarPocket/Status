@@ -14,7 +14,7 @@ class Main extends PluginBase implements Listener {
  		$this->getServer()->getPluginManager()->registerEvents($this, $this);
  		$this->EconomyS = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
  		$this->getServer()->getScheduler()->scheduleRepeatingTask(new CallbackTask(array($this, "ScoreboardStats")), 10);
-		$this->getLogger()->info("§a Enabled by TutoGamerWalid v1.0 !");
+		$this->getLogger()->info("§a Plugin Status Runing");
  		$this->timer = 0;
  	}
  
@@ -26,7 +26,8 @@ class Main extends PluginBase implements Listener {
  			$Full = $this->getServer()->getMaxPlayers();
  			$TPS = $this->getServer()->getTicksPerSecond(); 
  			$Load = $this->getServer()->getTickUsageAverage();
- 			$players->sendPopup(" §eID:§b $Name  §aCoin:§f $Money §2$ §cOnline:§a $Online §e/§a $Full \n §eTps §a:§b $TPS §dLoad §a: §b $Load §e%");
+ 			$Time = intval($this->cfg["time"]) * 20;
+ 			$players->sendPopup(" §eID:§b $Name  §aCoin:§f $Money §2$ §cOnline:§a $Online §e/§a $Full \n §eTps §a:§b $TPS §dLoad §a: §b $Load §e% §aTime §e: §6 $Time");
  		}
  	}
 
