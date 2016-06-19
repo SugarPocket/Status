@@ -1,6 +1,6 @@
-﻿name: ScoreBoardStats
+﻿name: Stats
 version: 2.0.0
-main: ScoreboardStats\Main
+main: Stats\Main
 author: SugarPocket 
 load: POSTWORLD
 api: 2.0.0
