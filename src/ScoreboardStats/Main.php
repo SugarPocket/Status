@@ -9,6 +9,8 @@ use pocketmine\scheduler\CallbackTask;
 
 class Main extends PluginBase implements Listener {
  	private $timer, $EconomyS;
+ 	
+ 	public $cfg;
  
  	public function onEnable() {
  		$this->getServer()->getPluginManager()->registerEvents($this, $this);
