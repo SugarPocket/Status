@@ -1,6 +1,6 @@
 <?php
 
-namespace Stats;
+namespace ScoreboardStats;
 
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
@@ -15,7 +15,7 @@ class Main extends PluginBase implements Listener {
  	public function onEnable() {
  		$this->getServer()->getPluginManager()->registerEvents($this, $this);
  		$this->EconomyS = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
- 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new CallbackTask(array($this, "Stats")), 10);
+ 		$this->getServer()->getScheduler()->scheduleRepeatingTask(new CallbackTask(array($this, "ScoreboardStats")), 10);
 		$this->getLogger()->info("§a Plugin Status Runing");
  		$this->timer = 0;
  	}
