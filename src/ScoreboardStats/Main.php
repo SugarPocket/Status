@@ -23,13 +23,13 @@ class Main extends PluginBase implements Listener {
  		foreach($this->getServer()->getOnlinePlayers() as $players) {
  			$Name = $players->getPlayer()->getName();
  			$Money = $this->EconomyS->mymoney($Name);
-                        //$Rank = $this->PurePerms->
+                        $Rank = $this->PurePerms->getUserDataMgr()->getGroup($player, $levelName);
  			//$Online = count(Server::getInstance()->getOnlinePlayers());
  			//$Full = $this->getServer()->getMaxPlayers();
  			//$TPS = $this->getServer()->getTicksPerSecond(); 
  			//$Load = $this->getServer()->getTickUsageAverage();
  			//$Time = intval($this->cfg["time"]) * 20;
- 			$players->sendPopup(" §eID:§b $Name  §aCoin:§f $Money §2$ ");
+ 			$players->sendPopup(" §eID:§b $Name §cRank:§d $Rank §aCoin:§f $Money §2$ ");
  		}
  	}
 
