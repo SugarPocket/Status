@@ -8,9 +8,8 @@ use pocketmine\Server;
 use pocketmine\scheduler\CallbackTask;
 
 class Main extends PluginBase implements Listener {
- 	private $timer, $EconomyS;
+ 	private $timer, $EconomyS, $PurePerms;
  	
- 	//public $cfg;
  
  	public function onEnable() {
  		$this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -24,6 +23,7 @@ class Main extends PluginBase implements Listener {
  		foreach($this->getServer()->getOnlinePlayers() as $players) {
  			$Name = $players->getPlayer()->getName();
  			$Money = $this->EconomyS->mymoney($Name);
+                        //$Rank = $this->PurePerms->
  			//$Online = count(Server::getInstance()->getOnlinePlayers());
  			//$Full = $this->getServer()->getMaxPlayers();
  			//$TPS = $this->getServer()->getTicksPerSecond(); 
