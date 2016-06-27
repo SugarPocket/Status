@@ -14,6 +14,7 @@ class Main extends PluginBase implements Listener {
  	public function onEnable() {
  		$this->getServer()->getPluginManager()->registerEvents($this, $this);
  		$this->EconomyS = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
+                $this->PurePerms = $this->getServer()->getPluginManager()->getPlugin("PurePerms");
  		$this->getServer()->getScheduler()->scheduleRepeatingTask(new CallbackTask(array($this, "ScoreboardStats")), 10);
 		$this->getLogger()->info("§a Plugin Status Runing");
  		$this->timer = 0;
@@ -23,7 +24,7 @@ class Main extends PluginBase implements Listener {
  		foreach($this->getServer()->getOnlinePlayers() as $players) {
  			$Name = $players->getPlayer()->getName();
  			$Money = $this->EconomyS->mymoney($Name);
-                        $Group = $this->PurePerms->getUser($player)->getGroup($levelName);
+                        $Group = $this->PurePerms->getUser($player)->getGroup($levelName); 
  			//$Online = count(Server::getInstance()->getOnlinePlayers());
  			//$Full = $this->getServer()->getMaxPlayers();
  			//$TPS = $this->getServer()->getTicksPerSecond(); 
