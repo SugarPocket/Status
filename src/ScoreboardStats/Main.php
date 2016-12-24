@@ -30,7 +30,8 @@ class Main extends PluginBase implements Listener {
  			//$TPS = $this->getServer()->getTicksPerSecond(); 
  			//$Load = $this->getServer()->getTickUsageAverage();
  			//$Time = intval($this->cfg["time"]) * 20;
- 			$players->sendPopup(" §eID:§b $Name §cRank:§d $Group §aCoin:§f $Money §2$ ");
+				$Item = $players->getInventory()->getItemInHand();
+ 			$players->sendPopup(" §eID:§b $Name §cRank:§d $Group §aCoin:§f $Money §2$ \n §9Item: $Item");
  		}
  	}
 
