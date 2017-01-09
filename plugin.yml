@@ -3,4 +3,4 @@ version: 2.0.5
 main: ScoreboardStats\Main
 author: SugarPocket 
 load: POSTWORLD
-api: [1.0.0, 2.0.0, 3.0.0]
+api: [1.0.0, 2.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2]
