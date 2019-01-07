@@ -1,6 +1,6 @@
 ﻿name: Status-mcpe
 version: 2.0.6
-main: status\Main
+main: ScoreboardStats\Main
 author: Ookittisako0 
 load: POSTWORLD
 api: [1.0.0, 2.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2]
