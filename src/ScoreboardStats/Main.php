@@ -13,7 +13,7 @@ class Main extends PluginBase implements Listener {
  
  	public function onEnable() {
  		$this->getServer()->getPluginManager()->registerEvents($this, $this);
- 		$this->EconomyS = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
+ 		$this->eco = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
  		$this->getServer()->getScheduler()->scheduleRepeatingTask(new CallbackTask(array($this, "Status")), 20);
 		$this->getLogger()->info("§a ปลักอิน แสดงสถานะ ถูกเปิด");
 		$this->getLogger()->info("§e กรุณลง ปลักอิน Economy API ด้วย");
@@ -21,13 +21,13 @@ class Main extends PluginBase implements Listener {
  	}
  
  	public function Status() {
- 		foreach($this->getServer()->getOnlinePlayers() as $players) {
- 			$Name = $players->getPlayer()->getName();
- 			$Money = $this->EconomyS->mymoney($Name);
- 			$Online = count(Server::getInstance()->getOnlinePlayers());	
-			$Item = $players->getInventory()->getItemInHand()->getId();
-			$da = $players->getInventory()->getItemInHand()->getDamage();
- 			$players->sendPopup(" §eไอดี:§b $Name §cออนไลน์:§d $Online §aเงินที่มี:§f $Money §2$ \n §9ไอเท็ม: $Item §f:§9 $da");
+ 		foreach($this->getServer()->getOnlinePlayers() as $p) {
+ 			$name = $p->getPlayer()->getName();
+ 			$money = $this->eco->mymoney($name);
+ 			$online = count(Server::getInstance()->getOnlinePlayers());	
+			$item = $p->getInventory()->getItemInHand()->getId();
+			$damage = $p->getInventory()->getItemInHand()->getDamage();
+ 			$p->sendPopup(" §eไอดี:§b $name §cออนไลน์:§d $online §aเงินที่มี:§f $money §2$ \n §9ไอเท็ม: $item §f:§9 $damage");
  		}
  	}
 
